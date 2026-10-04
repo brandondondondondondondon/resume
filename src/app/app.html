@@ -5,9 +5,15 @@
     <button matIconButton (click)="toggleTheme()" [attr.aria-label]="dark() ? 'Switch to light mode' : 'Switch to dark mode'">
       <mat-icon>{{ dark() ? 'light_mode' : 'dark_mode' }}</mat-icon>
     </button>
-    <a matButton="outlined" class="pdf" [href]="pdfHref()" download>
-      <mat-icon>download</mat-icon> PDF
-    </a>
+    @if (pdfHref(); as href) {
+      <a matButton="outlined" class="pdf" [href]="href" download>
+        <mat-icon>download</mat-icon> PDF
+      </a>
+    } @else {
+      <button matButton="outlined" class="pdf" (click)="print()">
+        <mat-icon>print</mat-icon> Save as PDF
+      </button>
+    }
   </mat-toolbar>
 
   <main>

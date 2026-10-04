@@ -44,9 +44,11 @@ export class App {
     return this.resume()?.roles?.find((r) => [...r.tags].sort().join() === active) ?? null;
   });
 
+  // Null for custom tag selections, which have no pre-generated PDF.
   protected readonly pdfHref = computed(() => {
     const role = this.activeRole();
-    return role ? `resume-${role.id}.pdf` : 'resume.pdf';
+    if (role) return `resume-${role.id}.pdf`;
+    return this.activeTags().length === 0 ? 'resume.pdf' : null;
   });
 
   protected readonly jobs = computed(() => {
