@@ -78,6 +78,21 @@ describe('App', () => {
     expect(bulletTexts()).toHaveLength(3);
   });
 
+  it('shows bullets matching any of the selected tags', async () => {
+    await setup();
+    await click(byText('mat-chip-option', 'frontend'));
+    await click(byText('mat-chip-option', 'backend'));
+    expect(bulletTexts()).toEqual(['Front thing', 'Back thing', 'Both thing']);
+  });
+
+  it('lists the selected tags in the print footer only when tags are selected', async () => {
+    await setup();
+    expect(el.querySelector('.print-tags')).toBeNull();
+    await click(byText('mat-chip-option', 'frontend'));
+    await click(byText('mat-chip-option', 'backend'));
+    expect(el.querySelector('.print-tags')?.textContent).toContain('frontend, backend');
+  });
+
   it('selects and deselects a role', async () => {
     await setup();
     const role = () => byText('.roles button', 'Backend');

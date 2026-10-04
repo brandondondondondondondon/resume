@@ -86,4 +86,8 @@
       </mat-card-content>
     </mat-card>
   </main>
+
+  @if (activeTags().length) {
+    <footer class="print-tags">Focus: {{ activeTags().join(', ') }}</footer>
+  }
 }

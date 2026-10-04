@@ -7,7 +7,7 @@ Live site: https://brandondondondondondondon.github.io/resume/
 ## Features
 
 - **JSON-managed content:** profile and jobs in `resume.json`, bullet points in `bullets.json`.
-- **Tag filtering:** filter bullets by tag chips; multiple tags can be combined.
+- **Tag filtering:** filter bullets by tag chips. With several tags selected, bullets carrying any of them are shown (and printed).
 - **Role-targeted links:** preset roles select a set of tags. Share `?role=frontend` or `?tags=backend,leadership` to send a tailored view. The URL stays in sync as filters change.
 - **PDF output:** CI generates `resume.pdf` plus one PDF per role. The PDF button links to the match for the current view, or opens the print dialog (Save as PDF) for custom tag selections.
 - **Light/dark theme:** follows the system setting, can be toggled, and the choice is remembered.
@@ -23,7 +23,7 @@ All content is in `public/data/`:
 
 - `jobId` must match a job `id` in `resume.json`. Jobs with no matching bullets are hidden.
 - Bullet `id` values must be unique.
-- A role is `{ id, label, tags }`. Its `id` is used in `?role=<id>` and the PDF file name (`resume-<id>.pdf`), so keep it URL-safe.
+- A role is `{ id, label, tags }`. Its tags are combined with OR: a bullet with any of them appears. Its `id` is used in `?role=<id>` and the PDF file name (`resume-<id>.pdf`), so keep it URL-safe.
 - Set a job's `end` to `null` for a current position.
 - Tags are free-form; any tag used on a bullet appears as a filter chip.
 

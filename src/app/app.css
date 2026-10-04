@@ -12,8 +12,10 @@ li { margin-bottom: 0.5rem; }
 .job { animation: fade-in 250ms ease-out; }
 @keyframes fade-in { from { opacity: 0; transform: translateY(6px); } }
 @media (prefers-reduced-motion: reduce) { .job { animation: none; } }
+.print-tags { display: none; }
 @media print {
+  .print-tags { display: block; position: fixed; bottom: 0; left: 0; right: 0; padding: 0.25rem 0; text-align: center; font-size: 0.75rem; color: #555; }
   .toolbar, .filters, .roles { display: none; }
-  main { padding: 0; }
+  main { padding: 0 0 2rem; }
   .job { break-inside: avoid; animation: none; }
 }
