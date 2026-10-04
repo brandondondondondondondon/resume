@@ -87,8 +87,8 @@ export class App {
     this.activeTags.update((cur) => (cur.includes(tag) ? cur.filter((t) => t !== tag) : [...cur, tag]));
   }
 
-  protected selectRole(role: Role | null) {
-    this.activeTags.set(role && this.activeRole()?.id !== role.id ? role.tags : []);
+  protected selectRole(role: Role) {
+    this.activeTags.set(this.activeRole()?.id !== role.id ? role.tags : []);
   }
 
   protected toggleTheme() {
