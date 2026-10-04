@@ -16,10 +16,10 @@ Live site: https://brandondondondondondondon.github.io/resume/
 
 All content is in `public/data/`:
 
-| File | Contents |
-| --- | --- |
-| `resume.json` | name, title, contact, summary, `roles`, `jobs`, `education` |
-| `bullets.json` | list of bullets: `{ id, jobId, text, tags }` |
+| File           | Contents                                                    |
+| -------------- | ----------------------------------------------------------- |
+| `resume.json`  | name, title, contact, summary, `roles`, `jobs`, `education` |
+| `bullets.json` | list of bullets: `{ id, jobId, text, tags }`                |
 
 - `jobId` must match a job `id` in `resume.json`. Jobs with no matching bullets are hidden.
 - Bullet `id` values must be unique.

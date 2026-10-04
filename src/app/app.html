@@ -2,7 +2,11 @@
   <mat-toolbar color="primary" class="toolbar">
     <span>{{ r.name }}</span>
     <span class="spacer"></span>
-    <button matIconButton (click)="toggleTheme()" [attr.aria-label]="dark() ? 'Switch to light mode' : 'Switch to dark mode'">
+    <button
+      matIconButton
+      (click)="toggleTheme()"
+      [attr.aria-label]="dark() ? 'Switch to light mode' : 'Switch to dark mode'"
+    >
       <mat-icon>{{ dark() ? 'light_mode' : 'dark_mode' }}</mat-icon>
     </button>
     @if (pdfHref(); as href) {
@@ -24,7 +28,9 @@
       </mat-card-header>
       <mat-card-content>
         <p class="contact">
-          <a matButton [href]="'mailto:' + r.contact.email"><mat-icon>mail</mat-icon>{{ r.contact.email }}</a>
+          <a matButton [href]="'mailto:' + r.contact.email"
+            ><mat-icon>mail</mat-icon>{{ r.contact.email }}</a
+          >
           <span class="location"><mat-icon>place</mat-icon>{{ r.contact.location }}</span>
           @for (link of r.contact.links; track link.url) {
             <a matButton [href]="link.url" target="_blank" rel="noopener">
@@ -81,7 +87,10 @@
     <mat-card appearance="outlined">
       <mat-card-content>
         @for (e of r.education; track e.school) {
-          <p><strong>{{ e.degree }}</strong>, {{ e.school }} ({{ e.year }})</p>
+          <p>
+            <strong>{{ e.degree }}</strong
+            >, {{ e.school }} ({{ e.year }})
+          </p>
         }
       </mat-card-content>
     </mat-card>

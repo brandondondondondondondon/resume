@@ -6,7 +6,11 @@ import { App } from './app';
 const RESUME = {
   name: 'Test Person',
   title: 'Dev',
-  contact: { email: 'a@b.c', location: 'X', links: [{ label: 'GitHub', url: 'https://example.com/gh' }] },
+  contact: {
+    email: 'a@b.c',
+    location: 'X',
+    links: [{ label: 'GitHub', url: 'https://example.com/gh' }],
+  },
   summary: 'sum',
   roles: [
     { id: 'fe', label: 'Frontend', tags: ['frontend'] },

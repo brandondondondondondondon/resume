@@ -26,7 +26,9 @@ export class App {
   });
 
   private readonly params = new URLSearchParams(window.location.search);
-  protected readonly activeTags = signal<string[]>(this.params.get('tags')?.split(',').filter(Boolean) ?? []);
+  protected readonly activeTags = signal<string[]>(
+    this.params.get('tags')?.split(',').filter(Boolean) ?? [],
+  );
   private readonly initialRole = this.params.get('role');
 
   protected readonly dark = signal(
@@ -84,7 +86,9 @@ export class App {
   }
 
   protected toggleTag(tag: string) {
-    this.activeTags.update((cur) => (cur.includes(tag) ? cur.filter((t) => t !== tag) : [...cur, tag]));
+    this.activeTags.update((cur) =>
+      cur.includes(tag) ? cur.filter((t) => t !== tag) : [...cur, tag],
+    );
   }
 
   protected selectRole(role: Role) {
