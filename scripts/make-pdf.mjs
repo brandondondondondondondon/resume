@@ -1,5 +1,4 @@
 import { createReadStream, existsSync, statSync } from 'node:fs';
-import { readFile } from 'node:fs/promises';
 import { createServer } from 'node:http';
 import { extname, join, normalize } from 'node:path';
 import puppeteer from 'puppeteer';
@@ -26,28 +25,20 @@ const server = createServer((req, res) => {
 await new Promise((resolve) => server.listen(0, resolve));
 const origin = `http://localhost:${server.address().port}${base}`;
 
-const { roles = [] } = JSON.parse(await readFile(join(dist, 'data/resume.json'), 'utf8'));
-const targets = [
-  { file: 'resume.pdf', query: '' },
-  ...roles.map((r) => ({ file: `resume-${r.id}.pdf`, query: `?role=${r.id}` })),
-];
-
 const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
 try {
   const page = await browser.newPage();
   await page.emulateMediaFeatures([{ name: 'prefers-color-scheme', value: 'light' }]);
-  for (const { file, query } of targets) {
-    await page.goto(origin + query, { waitUntil: 'networkidle0' });
-    await page.waitForSelector('mat-card');
-    await page.evaluateHandle('document.fonts.ready');
-    await page.pdf({
-      path: join(dist, file),
-      format: 'Letter',
-      printBackground: true,
-      margin: { top: '0.5in', bottom: '0.5in', left: '0.5in', right: '0.5in' },
-    });
-    console.log('wrote', file);
-  }
+  await page.goto(origin, { waitUntil: 'networkidle0' });
+  await page.waitForSelector('mat-card');
+  await page.evaluateHandle('document.fonts.ready');
+  await page.pdf({
+    path: join(dist, 'resume.pdf'),
+    format: 'Letter',
+    printBackground: true,
+    margin: { top: '0.5in', bottom: '0.5in', left: '0.5in', right: '0.5in' },
+  });
+  console.log('wrote resume.pdf');
 } finally {
   await browser.close();
   server.close();

@@ -6,18 +6,11 @@ export interface Job {
   end: string | null;
 }
 
-export interface Role {
-  id: string;
-  label: string;
-  tags: string[];
-}
-
 export interface Resume {
   name: string;
   title: string;
   contact: { email: string; location: string; links: { label: string; url: string }[] };
   summary: string;
-  roles?: Role[];
   jobs: Job[];
   education: { school: string; degree: string; year: string }[];
 }

@@ -43,20 +43,6 @@
     </mat-card>
 
     <h2>Experience</h2>
-    @if (r.roles?.length) {
-      <div class="roles" role="group" aria-label="Resume focus">
-        @for (role of r.roles; track role.id) {
-          <button
-            matButton="tonal"
-            [class.selected]="activeRole()?.id === role.id"
-            [attr.aria-pressed]="activeRole()?.id === role.id"
-            (click)="selectRole(role)"
-          >
-            {{ role.label }}
-          </button>
-        }
-      </div>
-    }
     <mat-chip-listbox class="filters" multiple aria-label="Filter by tag">
       @for (tag of tags(); track tag) {
         <mat-chip-option [selected]="activeTags().includes(tag)" (click)="toggleTag(tag)">

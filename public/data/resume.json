@@ -1,34 +1,15 @@
 {
-  "name": "Your Name",
+  "name": "Brandon Harmon",
   "title": "Principal Software Engineer",
   "contact": {
-    "email": "you@example.com",
-    "location": "City, State",
+    "email": "brandon.is.a.coder@gmail.com",
+    "location": "Cincinnati, OH",
     "links": [
       { "label": "GitHub", "url": "https://github.com/your-username" },
       { "label": "LinkedIn", "url": "https://www.linkedin.com/in/your-username" }
     ]
   },
   "summary": "Short professional summary goes here.",
-  "roles": [
-    {
-      "id": "software-engineering",
-      "label": "Software Engineering",
-      "tags": ["software-engineering"]
-    },
-    { "id": "devops", "label": "DevOps", "tags": ["devops"] },
-    {
-      "id": "application-support",
-      "label": "Application Support",
-      "tags": ["application-support"]
-    },
-    { "id": "consulting", "label": "Consulting", "tags": ["consulting"] },
-    { "id": "leadership", "label": "Leadership", "tags": ["leadership"] },
-    { "id": "research", "label": "Research", "tags": ["research"] },
-    { "id": "education", "label": "Education", "tags": ["education"] },
-    { "id": "military", "label": "Military Service", "tags": ["military"] },
-    { "id": "customer-service", "label": "Customer Service", "tags": ["customer-service"] }
-  ],
   "jobs": [
     {
       "id": "fidelity-principal-software-engineer",

@@ -8,22 +8,21 @@ Live site: https://brandondondondondondondon.github.io/resume/
 
 - **JSON-managed content:** profile and jobs in `resume.json`, bullet points in `bullets.json`.
 - **Tag filtering:** filter bullets by tag chips. With several tags selected, bullets carrying any of them are shown (and printed).
-- **Role-targeted links:** preset roles select a set of tags. Share `?role=frontend` or `?tags=backend,leadership` to send a tailored view. The URL stays in sync as filters change.
-- **PDF output:** CI generates `resume.pdf` plus one PDF per role. The PDF button links to the match for the current view, or opens the print dialog (Save as PDF) for custom tag selections.
+- **Tag-based links:** share `?tags=backend,leadership` to open a tailored view. The URL stays in sync as filters change.
+- **PDF output:** CI generates `resume.pdf`. The PDF button links to it when no tags are selected, or opens the print dialog (Save as PDF) for filtered views.
 - **Light/dark theme:** follows the system setting, can be toggled, and the choice is remembered.
 
 ## Editing content
 
 All content is in `public/data/`:
 
-| File           | Contents                                                    |
-| -------------- | ----------------------------------------------------------- |
-| `resume.json`  | name, title, contact, summary, `roles`, `jobs`, `education` |
-| `bullets.json` | list of bullets: `{ id, jobId, text, tags }`                |
+| File           | Contents                                           |
+| -------------- | -------------------------------------------------- |
+| `resume.json`  | name, title, contact, summary, `jobs`, `education` |
+| `bullets.json` | list of bullets: `{ id, jobId, text, tags }`       |
 
 - `jobId` must match a job `id` in `resume.json`. Jobs with no matching bullets are hidden.
 - Bullet `id` values must be unique.
-- A role is `{ id, label, tags }`. Its tags are combined with OR: a bullet with any of them appears. Its `id` is used in `?role=<id>` and the PDF file name (`resume-<id>.pdf`), so keep it URL-safe.
 - A job's `end` of `null` is shown as "Unspecified", so use a real end date for past roles. Overlapping titles at one employer should be a single job with combined role text.
 - Tags are free-form; any tag used on a bullet appears as a filter chip.
 
@@ -74,4 +73,4 @@ If the repository is renamed to `<user>.github.io`, change the base href in the 
 - **Accessibility:** interactive controls need accessible labels, and animations must respect `prefers-reduced-motion`.
 - **Testing:** every behavior change needs a test in `src/app/app.spec.ts`. Keep line coverage at 100% for `src/app`.
 - **Content changes:** edit the JSON only; do not hard-code resume text in templates.
-- **Commits:** small, focused commits following [Conventional Commits](https://www.conventionalcommits.org/): `<type>(optional scope): <description>`, with an imperative, lowercase description. Common types: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `build`, `ci`, `chore`. Content-only edits to the JSON use `docs` or `chore(content)`. Examples: `feat: add dark mode toggle`, `fix(pdf): use base href when serving`, `ci: install chrome before pdf step`. Mark breaking changes with `!` (e.g. `feat!: rename roles to views`). This is enforced locally by commitlint through a Husky `commit-msg` hook, installed automatically by `npm install`.
+- **Commits:** small, focused commits following [Conventional Commits](https://www.conventionalcommits.org/): `<type>(optional scope): <description>`, with an imperative, lowercase description. Common types: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `build`, `ci`, `chore`. Content-only edits to the JSON use `docs` or `chore(content)`. Examples: `feat: add dark mode toggle`, `fix(pdf): use base href when serving`, `ci: install chrome before pdf step`. Mark breaking changes with `!` (e.g. `feat!: change tag filter URL format`). This is enforced locally by commitlint through a Husky `commit-msg` hook, installed automatically by `npm install`.

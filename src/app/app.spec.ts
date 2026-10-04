@@ -12,10 +12,6 @@ const RESUME = {
     links: [{ label: 'GitHub', url: 'https://example.com/gh' }],
   },
   summary: 'sum',
-  roles: [
-    { id: 'fe', label: 'Frontend', tags: ['frontend'] },
-    { id: 'be', label: 'Backend', tags: ['backend'] },
-  ],
   jobs: [
     { id: 'j1', company: 'Acme', role: 'Lead', start: '2021-01', end: null },
     { id: 'j2', company: 'Globex', role: 'Dev', start: '2018-01', end: '2020-12' },
@@ -97,19 +93,10 @@ describe('App', () => {
     expect(el.querySelector('.print-tags')?.textContent).toContain('frontend, backend');
   });
 
-  it('selects and deselects a role', async () => {
+  it('shows filter chips for tags used by bullets', async () => {
     await setup();
-    const role = () => byText('.roles button', 'Backend');
-    await click(role());
-    expect(bulletTexts()).toEqual(['Back thing', 'Both thing']);
-    expect(role()?.getAttribute('aria-pressed')).toBe('true');
-    await click(role());
-    expect(bulletTexts()).toHaveLength(3);
-  });
-
-  it('applies ?role= from the URL', async () => {
-    await setup('?role=fe');
-    expect(bulletTexts()).toEqual(['Front thing', 'Both thing']);
+    expect([...el.querySelectorAll('mat-chip-option')].map((chip) => chip.textContent?.trim()))
+      .toEqual(['backend', 'frontend']);
   });
 
   it('applies ?tags= from the URL and keeps the URL in sync', async () => {
@@ -117,20 +104,20 @@ describe('App', () => {
     expect(bulletTexts()).toEqual(['Back thing', 'Both thing']);
     await click(byText('mat-chip-option', 'frontend'));
     expect(window.location.search).toBe('?tags=backend%2Cfrontend');
-    await click(byText('.roles button', 'Frontend'));
-    await click(byText('.roles button', 'Frontend'));
+    await click(byText('mat-chip-option', 'frontend'));
+    await click(byText('mat-chip-option', 'backend'));
     expect(window.location.search).toBe('');
   });
 
-  it('ignores an unknown ?role=', async () => {
-    await setup('?role=nope');
+  it('ignores legacy ?role= links', async () => {
+    await setup('?role=fe');
     expect(bulletTexts()).toHaveLength(3);
+    expect(window.location.search).toBe('');
   });
 
-  it('works when the resume has no roles', async () => {
-    await setup('', { ...RESUME, roles: undefined });
+  it('does not render preset role controls', async () => {
+    await setup();
     expect(el.querySelector('.roles')).toBeNull();
-    expect(bulletTexts()).toHaveLength(3);
   });
 
   describe('PDF button', () => {
@@ -139,12 +126,7 @@ describe('App', () => {
       expect(pdf()?.getAttribute('href')).toBe('resume.pdf');
     });
 
-    it('links to the role PDF when a role is selected', async () => {
-      await setup('?role=be');
-      expect(pdf()?.getAttribute('href')).toBe('resume-be.pdf');
-    });
-
-    it('prints the current view for a custom tag selection', async () => {
+    it('prints the current view when tags are selected', async () => {
       await setup('?tags=frontend,backend');
       const print = vi.spyOn(window, 'print').mockImplementation(() => undefined);
       expect(pdf()?.tagName).toBe('BUTTON');

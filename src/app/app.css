@@ -38,15 +38,6 @@ mat-card-header {
   gap: 0.25rem;
   padding: 0 0.75rem;
 }
-.roles {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-.roles .selected {
-  --mat-button-tonal-container-color: var(--mat-sys-primary);
-  --mat-button-tonal-label-text-color: var(--mat-sys-on-primary);
-}
 li {
   margin-bottom: 0.5rem;
 }
@@ -80,8 +71,7 @@ li {
     color: #555;
   }
   .toolbar,
-  .filters,
-  .roles {
+  .filters {
     display: none;
   }
   main {
