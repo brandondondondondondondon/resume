@@ -1,6 +1,6 @@
 {
   "name": "Your Name",
-  "title": "Software Engineer",
+  "title": "Principal Software Engineer",
   "contact": {
     "email": "you@example.com",
     "location": "City, State",
@@ -11,27 +11,82 @@
   },
   "summary": "Short professional summary goes here.",
   "roles": [
-    { "id": "frontend", "label": "Frontend", "tags": ["frontend", "angular", "performance"] },
-    { "id": "backend", "label": "Backend", "tags": ["backend", "performance"] },
-    { "id": "leadership", "label": "Leadership", "tags": ["leadership"] }
+    { "id": "software-engineering", "label": "Software Engineering", "tags": ["software-engineering"] },
+    { "id": "devops", "label": "DevOps", "tags": ["devops"] },
+    { "id": "application-support", "label": "Application Support", "tags": ["application-support"] },
+    { "id": "consulting", "label": "Consulting", "tags": ["consulting"] },
+    { "id": "leadership", "label": "Leadership", "tags": ["leadership"] },
+    { "id": "research", "label": "Research", "tags": ["research"] },
+    { "id": "education", "label": "Education", "tags": ["education"] },
+    { "id": "military", "label": "Military Service", "tags": ["military"] },
+    { "id": "customer-service", "label": "Customer Service", "tags": ["customer-service"] }
   ],
   "jobs": [
     {
-      "id": "acme",
-      "company": "Acme Corp",
-      "role": "Senior Software Engineer",
-      "start": "2021-03",
+      "id": "fidelity-principal-software-engineer",
+      "company": "Fidelity",
+      "role": "Principal Software Engineer",
+      "start": "2022",
       "end": null
     },
     {
-      "id": "globex",
-      "company": "Globex Inc",
-      "role": "Software Engineer",
-      "start": "2018-06",
-      "end": "2021-02"
+      "id": "sogeti",
+      "company": "Sogeti",
+      "role": "Consultant / Senior Consultant",
+      "start": "2017",
+      "end": "2022"
+    },
+    {
+      "id": "costrategix",
+      "company": "Costrategix",
+      "role": "Developer / Lead Developer / DevOps",
+      "start": "2014",
+      "end": "2017"
+    },
+    {
+      "id": "air-force-research-lab-internship",
+      "company": "Air Force Research Lab",
+      "role": "Year at the Edge - Internship",
+      "start": "2011",
+      "end": "2013"
+    },
+    {
+      "id": "convergeys-java-developer-internship",
+      "company": "Convergeys",
+      "role": "Java Developer - Internship",
+      "start": "2011-06-01",
+      "end": "2011-08-15"
+    },
+    {
+      "id": "army",
+      "company": "Army",
+      "role": "Soldier | Unit Movement Coordinator | Lead Firefighter | Medic | Armorer",
+      "start": "2004-06-09",
+      "end": "2010-11-30"
+    },
+    {
+      "id": "hot-topic-sales",
+      "company": "Hot Topic",
+      "role": "Sales",
+      "start": "2002-11",
+      "end": "2003-02"
+    },
+    {
+      "id": "panera-barista",
+      "company": "Panera",
+      "role": "Barista",
+      "start": "2003",
+      "end": "2004"
+    },
+    {
+      "id": "donatos-pizza-maker",
+      "company": "Donatos",
+      "role": "Pizza Maker",
+      "start": "2001",
+      "end": "2003"
     }
   ],
   "education": [
-    { "school": "State University", "degree": "B.S. Computer Science", "year": "2018" }
+    { "school": "Miami University", "degree": "B.S. in Software Engineering", "year": "2014" }
   ]
 }

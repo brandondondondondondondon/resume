@@ -24,7 +24,7 @@ All content is in `public/data/`:
 - `jobId` must match a job `id` in `resume.json`. Jobs with no matching bullets are hidden.
 - Bullet `id` values must be unique.
 - A role is `{ id, label, tags }`. Its tags are combined with OR: a bullet with any of them appears. Its `id` is used in `?role=<id>` and the PDF file name (`resume-<id>.pdf`), so keep it URL-safe.
-- Set a job's `end` to `null` for a current position.
+- A job's `end` of `null` is shown as "Unspecified", so use a real end date for past roles. Overlapping titles at one employer should be a single job with combined role text.
 - Tags are free-form; any tag used on a bullet appears as a filter chip.
 
 Types for this data are in `src/app/resume.model.ts`.

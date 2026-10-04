@@ -63,7 +63,7 @@ describe('App', () => {
     await setup();
     expect(el.querySelector('.name')?.textContent).toContain('Test Person');
     expect(bulletTexts()).toEqual(['Front thing', 'Back thing', 'Both thing']);
-    expect(el.textContent).toContain('2021-01 – Present');
+    expect(el.textContent).toContain('2021-01 – Unspecified');
     expect(el.textContent).toContain('2018-01 – 2020-12');
     expect(el.textContent).toContain('BS');
     expect(el.textContent).toContain('GitHub');

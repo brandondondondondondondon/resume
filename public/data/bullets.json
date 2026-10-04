@@ -1,7 +1,98 @@
 [
-  { "id": 1, "jobId": "acme", "text": "Led migration of a monolith to services, cutting deploy time by 70%.", "tags": ["backend", "leadership"] },
-  { "id": 2, "jobId": "acme", "text": "Built an Angular component library adopted by 5 product teams.", "tags": ["frontend", "angular"] },
-  { "id": 3, "jobId": "acme", "text": "Mentored 4 junior engineers through onboarding and first releases.", "tags": ["leadership"] },
-  { "id": 4, "jobId": "globex", "text": "Developed REST APIs serving 2M requests per day.", "tags": ["backend"] },
-  { "id": 5, "jobId": "globex", "text": "Improved page load time by 40% through lazy loading and caching.", "tags": ["frontend", "performance"] }
+  {
+    "id": 1,
+    "jobId": "fidelity-principal-software-engineer",
+    "text": "Principal Software Engineer in Cognitive Computing.",
+    "tags": ["software-engineering"]
+  },
+  {
+    "id": 2,
+    "jobId": "sogeti",
+    "text": "Progressed from Consultant to Senior Consultant.",
+    "tags": ["consulting"]
+  },
+  {
+    "id": 3,
+    "jobId": "sogeti",
+    "text": "Developed a Java Spring Boot application to support analysis of flight sensor data.",
+    "tags": ["software-engineering"]
+  },
+  {
+    "id": 4,
+    "jobId": "sogeti",
+    "text": "Supported tools and applications for building, scanning, and monitoring software, as well as systems critical to live flight-data analytics.",
+    "tags": ["devops"]
+  },
+  {
+    "id": 5,
+    "jobId": "costrategix",
+    "text": "Supported tools and applications for building, scanning, and monitoring software.",
+    "tags": ["devops"]
+  },
+  {
+    "id": 6,
+    "jobId": "costrategix",
+    "text": "Provided technical leadership, answered team questions, and resolved blockers to keep development moving.",
+    "tags": ["leadership"]
+  },
+  {
+    "id": 7,
+    "jobId": "costrategix",
+    "text": "Developed Java Spring applications.",
+    "tags": ["software-engineering"]
+  },
+  {
+    "id": 8,
+    "jobId": "air-force-research-lab-internship",
+    "text": "Developed prototypes and projects using modern technology in creative ways.",
+    "tags": ["research"]
+  },
+  {
+    "id": 9,
+    "jobId": "convergeys-java-developer-internship",
+    "text": "Designed and implemented a logging wrapper to meet strict requirements for logging output.",
+    "tags": ["software-engineering"]
+  },
+  {
+    "id": 10,
+    "jobId": "army",
+    "text": "Coordinated movement of unit equipment from Fort Campbell, Kentucky, to Kandahar, Afghanistan, for deployment.",
+    "tags": ["military"]
+  },
+  {
+    "id": 11,
+    "jobId": "army",
+    "text": "Served as a firefighter and lead firefighter, preparing for emergencies and leading readiness and response.",
+    "tags": ["military"]
+  },
+  {
+    "id": 12,
+    "jobId": "army",
+    "text": "Prepared for and responded to medical emergencies.",
+    "tags": ["military"]
+  },
+  {
+    "id": 13,
+    "jobId": "army",
+    "text": "Maintained and inventoried sensitive equipment for the unit.",
+    "tags": ["military"]
+  },
+  {
+    "id": 14,
+    "jobId": "hot-topic-sales",
+    "text": "Maintained the store and assisted customers.",
+    "tags": ["customer-service"]
+  },
+  {
+    "id": 15,
+    "jobId": "panera-barista",
+    "text": "Maintained a clean store, prepared coffee, sold baked goods, and assisted customers.",
+    "tags": ["customer-service"]
+  },
+  {
+    "id": 16,
+    "jobId": "donatos-pizza-maker",
+    "text": "Prepared pizzas, cleaned the store, and assisted customers.",
+    "tags": ["customer-service"]
+  }
 ]
