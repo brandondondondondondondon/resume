@@ -1,0 +1,7 @@
+[
+  { "id": 1, "jobId": "acme", "text": "Led migration of a monolith to services, cutting deploy time by 70%.", "tags": ["backend", "leadership"] },
+  { "id": 2, "jobId": "acme", "text": "Built an Angular component library adopted by 5 product teams.", "tags": ["frontend", "angular"] },
+  { "id": 3, "jobId": "acme", "text": "Mentored 4 junior engineers through onboarding and first releases.", "tags": ["leadership"] },
+  { "id": 4, "jobId": "globex", "text": "Developed REST APIs serving 2M requests per day.", "tags": ["backend"] },
+  { "id": 5, "jobId": "globex", "text": "Improved page load time by 40% through lazy loading and caching.", "tags": ["frontend", "performance"] }
+]

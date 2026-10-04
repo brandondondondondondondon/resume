@@ -1,0 +1,83 @@
+@if (resume(); as r) {
+  <mat-toolbar color="primary" class="toolbar">
+    <span>{{ r.name }}</span>
+    <span class="spacer"></span>
+    <button matIconButton (click)="toggleTheme()" [attr.aria-label]="dark() ? 'Switch to light mode' : 'Switch to dark mode'">
+      <mat-icon>{{ dark() ? 'light_mode' : 'dark_mode' }}</mat-icon>
+    </button>
+    <a matButton="outlined" class="pdf" [href]="pdfHref()" download>
+      <mat-icon>download</mat-icon> PDF
+    </a>
+  </mat-toolbar>
+
+  <main>
+    <mat-card appearance="outlined">
+      <mat-card-header>
+        <mat-card-title class="name">{{ r.name }}</mat-card-title>
+        <mat-card-subtitle>{{ r.title }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p class="contact">
+          <a matButton [href]="'mailto:' + r.contact.email"><mat-icon>mail</mat-icon>{{ r.contact.email }}</a>
+          <span class="location"><mat-icon>place</mat-icon>{{ r.contact.location }}</span>
+          @for (link of r.contact.links; track link.url) {
+            <a matButton [href]="link.url" target="_blank" rel="noopener">
+              <mat-icon>open_in_new</mat-icon>{{ link.label }}
+            </a>
+          }
+        </p>
+        <p>{{ r.summary }}</p>
+      </mat-card-content>
+    </mat-card>
+
+    <h2>Experience</h2>
+    @if (r.roles?.length) {
+      <div class="roles" role="group" aria-label="Resume focus">
+        @for (role of r.roles; track role.id) {
+          <button
+            matButton="tonal"
+            [class.selected]="activeRole()?.id === role.id"
+            [attr.aria-pressed]="activeRole()?.id === role.id"
+            (click)="selectRole(role)"
+          >
+            {{ role.label }}
+          </button>
+        }
+      </div>
+    }
+    <mat-chip-listbox class="filters" multiple aria-label="Filter by tag">
+      @for (tag of tags(); track tag) {
+        <mat-chip-option [selected]="activeTags().includes(tag)" (click)="toggleTag(tag)">
+          {{ tag }}
+        </mat-chip-option>
+      }
+    </mat-chip-listbox>
+
+    @for (entry of jobs(); track entry.job.id) {
+      <mat-card appearance="outlined" class="job">
+        <mat-card-header>
+          <mat-card-title>{{ entry.job.role }}</mat-card-title>
+          <mat-card-subtitle>
+            {{ entry.job.company }} · {{ entry.job.start }} – {{ entry.job.end ?? 'Present' }}
+          </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <ul>
+            @for (b of entry.bullets; track b.id) {
+              <li>{{ b.text }}</li>
+            }
+          </ul>
+        </mat-card-content>
+      </mat-card>
+    }
+
+    <h2>Education</h2>
+    <mat-card appearance="outlined">
+      <mat-card-content>
+        @for (e of r.education; track e.school) {
+          <p><strong>{{ e.degree }}</strong>, {{ e.school }} ({{ e.year }})</p>
+        }
+      </mat-card-content>
+    </mat-card>
+  </main>
+}

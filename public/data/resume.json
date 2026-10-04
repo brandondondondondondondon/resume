@@ -1,0 +1,37 @@
+{
+  "name": "Your Name",
+  "title": "Software Engineer",
+  "contact": {
+    "email": "you@example.com",
+    "location": "City, State",
+    "links": [
+      { "label": "GitHub", "url": "https://github.com/your-username" },
+      { "label": "LinkedIn", "url": "https://www.linkedin.com/in/your-username" }
+    ]
+  },
+  "summary": "Short professional summary goes here.",
+  "roles": [
+    { "id": "frontend", "label": "Frontend", "tags": ["frontend", "angular", "performance"] },
+    { "id": "backend", "label": "Backend", "tags": ["backend", "performance"] },
+    { "id": "leadership", "label": "Leadership", "tags": ["leadership"] }
+  ],
+  "jobs": [
+    {
+      "id": "acme",
+      "company": "Acme Corp",
+      "role": "Senior Software Engineer",
+      "start": "2021-03",
+      "end": null
+    },
+    {
+      "id": "globex",
+      "company": "Globex Inc",
+      "role": "Software Engineer",
+      "start": "2018-06",
+      "end": "2021-02"
+    }
+  ],
+  "education": [
+    { "school": "State University", "degree": "B.S. Computer Science", "year": "2018" }
+  ]
+}
