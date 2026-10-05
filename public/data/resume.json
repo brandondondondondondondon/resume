@@ -84,28 +84,28 @@
     {
       "id": "sogeti",
       "company": "Sogeti",
-      "role": "Consultant / Senior Consultant",
+      "role": "Senior Consultant",
       "start": "2017",
       "end": "2022"
     },
     {
       "id": "costrategix",
       "company": "Costrategix",
-      "role": "Developer / Lead Developer / DevOps",
+      "role": "Software Engineer",
       "start": "2014",
       "end": "2017"
     },
     {
       "id": "air-force-research-lab-internship",
       "company": "Air Force Research Lab",
-      "role": "Year at the Edge - Internship",
+      "role": "Intern",
       "start": "2011",
       "end": "2013"
     },
     {
       "id": "convergeys-java-developer-internship",
       "company": "Convergeys",
-      "role": "Java Developer - Internship",
+      "role": "Intern",
       "start": "2011-06",
       "end": "2011-08"
     }
@@ -114,7 +114,7 @@
     {
       "id": "army",
       "company": "Army",
-      "role": "Soldier | Unit Movement Coordinator | Lead Firefighter | Medic | Armorer",
+      "role": "Soldier | Firefighter",
       "start": "2004-06",
       "end": "2010-11"
     },
