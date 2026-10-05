@@ -1,25 +1,13 @@
 [
   {
-    "jobId": "fidelity-principal-software-engineer",
-    "text": "Principal Software Engineer in Cognitive Computing.",
-    "tags": ["software-engineering"],
-    "skills": []
-  },
-  {
     "jobId": "sogeti",
-    "text": "Progressed from Consultant to Senior Consultant.",
-    "tags": ["consulting"],
-    "skills": []
-  },
-  {
-    "jobId": "sogeti",
-    "text": "Built features across aircraft flight-data applications using Java, Python, Go, and Vue.js.",
+    "text": "Developed features for aircraft flight-data applications using Java, Python, Go, and Vue.js.",
     "tags": ["software-engineering", "data"],
     "skills": ["Java", "Python", "Go", "Vue.js"]
   },
   {
     "jobId": "sogeti",
-    "text": "Served as a senior developer on SOAR, a highly available Spring Boot and Docker application on AWS that analyzes engine performance and issues real-time alerts.",
+    "text": "Built SOAR, a highly available AWS application using Spring Boot and Docker to analyze engine performance and deliver real-time alerts.",
     "tags": ["software-engineering", "cloud", "data"],
     "skills": [
       "Spring Boot",
@@ -32,55 +20,37 @@
   },
   {
     "jobId": "sogeti",
-    "text": "Developed an auditable data-export service to integrate platform versions, processing up to 700 reports per minute and 500,000 analytic executions per minute.",
+    "text": "Built an auditable data-export service to integrate data across platform versions, processing up to 700 reports and 500,000 analytic executions per minute.",
     "tags": ["software-engineering", "cloud", "data"],
     "skills": ["Platform integration"]
   },
   {
     "jobId": "sogeti",
-    "text": "Troubleshot complex data issues across engine registration, analytic workflows, AWS services, and corporate networks to support accuracy and reliability in a safety-critical application.",
+    "text": "Resolved complex data issues across engine registration, analytic workflows, AWS services, and corporate networks for a safety-critical application.",
     "tags": ["troubleshooting", "cloud", "data"],
     "skills": ["AWS"]
   },
   {
     "jobId": "sogeti",
-    "text": "Monitored and mitigated vulnerabilities in applications and Docker containers identified by Qualys, Prisma Cloud, and SonarQube.",
+    "text": "Mitigated application and Docker-container vulnerabilities identified by Qualys, Prisma Cloud, and SonarQube.",
     "tags": ["security", "devops"],
     "skills": ["Docker", "Security scanning", "Qualys", "Prisma Cloud", "SonarQube"]
   },
   {
     "jobId": "sogeti",
-    "text": "Responded to P1 service outages, helping troubleshoot and mitigate production issues and follow up with root-cause analysis and preventive actions.",
+    "text": "Responded to P1 production outages by troubleshooting incidents, mitigating impact, and contributing to root-cause analysis and preventive actions.",
     "tags": ["devops", "troubleshooting"],
     "skills": ["Incident response", "Root-cause analysis"]
   },
   {
     "jobId": "costrategix",
-    "text": "Owned product delivery from gathering client needs and estimating work through coordinating the development team and conducting client reviews.",
-    "tags": ["product", "leadership"],
-    "skills": ["Product ownership"]
-  },
-  {
-    "jobId": "costrategix",
-    "text": "Led development of key networking and operational components for a cloud-based 3D-printing platform, including video streaming, status monitoring, command control, and firmware upgrades.",
+    "text": "Led development of networking and operational features for a cloud-managed 3D-printer fleet, including video streaming, status monitoring, remote command and control, and firmware upgrades.",
     "tags": ["leadership"],
     "skills": ["Monitoring", "Technical leadership", "IoT"]
   },
   {
     "jobId": "costrategix",
-    "text": "Researched and prototyped IoT applications and cloud technologies, including AWS Lambda, Angular, React, and Firebase, to demonstrate new capabilities to the team.",
-    "tags": ["software-engineering", "research", "cloud"],
-    "skills": ["AWS Lambda", "Angular", "React", "Firebase", "IoT"]
-  },
-  {
-    "jobId": "costrategix",
-    "text": "Developed Java and Spring applications and provided technical leadership to the development team.",
-    "tags": ["software-engineering", "leadership"],
-    "skills": ["Java", "Spring", "Technical leadership"]
-  },
-  {
-    "jobId": "costrategix",
-    "text": "Led a vendor-data reconciliation project for a client processing more than $1 billion in annual sales; the system identified discrepancies and improved auditor efficiency.",
+    "text": "Led a vendor-data reconciliation project for a client with more than $1 billion in annual sales; the system identified discrepancies and improved auditor efficiency.",
     "tags": ["software-engineering", "leadership", "data"],
     "skills": ["Technical leadership", "Platform integration"]
   },
@@ -98,13 +68,19 @@
   },
   {
     "jobId": "costrategix",
-    "text": "Supported a restaurant-management platform serving more than 1,000 locations, monitoring service health with Zabbix, performing security scans, and maintaining AWS auto-scaling and server configurations.",
+    "text": "Supported a restaurant-management platform serving more than 1,000 locations by monitoring service health with Zabbix, performing security scans, and maintaining AWS auto-scaling rules and server configurations.",
     "tags": ["devops", "security", "monitoring"],
     "skills": ["Zabbix", "Security scanning", "AWS", "AWS auto scaling", "Monitoring"]
   },
   {
+    "jobId": "costrategix",
+    "text": "Prototyped IoT applications and evaluated AWS Lambda, Angular, React, and Firebase to demonstrate emerging cloud capabilities to the team.",
+    "tags": ["software-engineering", "research", "cloud"],
+    "skills": ["AWS Lambda", "Angular", "React", "Firebase", "IoT"]
+  },
+  {
     "jobId": "air-force-research-lab-internship",
-    "text": "Contributed to prototype IoT hardware to help manage patients during mass-casualty events; the project later earned third place at the 2014 IPSO Conference.",
+    "text": "Contributed to IoT hardware prototypes for managing patients during mass-casualty events; the project placed third at the 2014 IPSO Conference.",
     "tags": ["research", "iot"],
     "skills": ["IoT"]
   },
@@ -116,44 +92,20 @@
   },
   {
     "jobId": "army",
-    "text": "Coordinated movement of unit equipment from Fort Campbell, Kentucky, to Kandahar, Afghanistan, for deployment.",
+    "text": "Coordinated unit-equipment movement from Fort Campbell to Kandahar, Afghanistan, for deployment.",
     "tags": ["military"],
     "skills": []
   },
   {
     "jobId": "army",
-    "text": "Served as a firefighter and lead firefighter, preparing for emergencies and leading readiness and response.",
+    "text": "Served as a firefighter and lead firefighter, leading emergency-response readiness.",
     "tags": ["military"],
     "skills": []
   },
   {
     "jobId": "army",
-    "text": "Prepared for and responded to medical emergencies.",
+    "text": "Maintained accountability and inventory of sensitive unit equipment.",
     "tags": ["military"],
-    "skills": []
-  },
-  {
-    "jobId": "army",
-    "text": "Maintained and inventoried sensitive equipment for the unit.",
-    "tags": ["military"],
-    "skills": []
-  },
-  {
-    "jobId": "hot-topic-sales",
-    "text": "Maintained the store and assisted customers.",
-    "tags": ["customer-service"],
-    "skills": []
-  },
-  {
-    "jobId": "panera-barista",
-    "text": "Maintained a clean store, prepared coffee, sold baked goods, and assisted customers.",
-    "tags": ["customer-service"],
-    "skills": []
-  },
-  {
-    "jobId": "donatos-pizza-maker",
-    "text": "Prepared pizzas, cleaned the store, and assisted customers.",
-    "tags": ["customer-service"],
     "skills": []
   }
 ]
