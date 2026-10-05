@@ -7,7 +7,7 @@
   },
   {
     "jobId": "sogeti",
-    "text": "Built SOAR, a highly available AWS application using Spring Boot and Docker to analyze engine performance and deliver real-time alerts.",
+    "text": "Contributed to the development of SOAR, a highly available AWS application for engine-performance analysis and real-time alerts, using Spring Boot and Docker.",
     "tags": ["software-engineering", "cloud", "data"],
     "skills": [
       "Spring Boot",
@@ -20,61 +20,61 @@
   },
   {
     "jobId": "sogeti",
-    "text": "Built an auditable data-export service to integrate data across platform versions, processing up to 700 reports and 500,000 analytic executions per minute.",
+    "text": "Designed an auditable data-export service integrating data across platform versions and supporting up to 700 reports and 500,000 analytic executions per minute.",
     "tags": ["software-engineering", "cloud", "data"],
     "skills": ["Platform integration"]
   },
   {
     "jobId": "sogeti",
-    "text": "Resolved complex data issues across engine registration, analytic workflows, AWS services, and corporate networks for a safety-critical application.",
+    "text": "Troubleshot data issues across engine registration, analytics workflows, AWS services, and corporate networks in a safety-critical application.",
     "tags": ["troubleshooting", "cloud", "data"],
     "skills": ["AWS"]
   },
   {
     "jobId": "sogeti",
-    "text": "Mitigated application and Docker-container vulnerabilities identified by Qualys, Prisma Cloud, and SonarQube.",
+    "text": "Remediated application and Docker-container vulnerabilities identified by Qualys, Prisma Cloud, and SonarQube.",
     "tags": ["security", "devops"],
     "skills": ["Docker", "Security scanning", "Qualys", "Prisma Cloud", "SonarQube"]
   },
   {
     "jobId": "sogeti",
-    "text": "Responded to P1 production outages by troubleshooting incidents, mitigating impact, and contributing to root-cause analysis and preventive actions.",
+    "text": "Responded to P1 production outages by triaging incidents, limiting impact, and contributing to root-cause analysis and preventive actions.",
     "tags": ["devops", "troubleshooting"],
     "skills": ["Incident response", "Root-cause analysis"]
   },
   {
     "jobId": "costrategix",
-    "text": "Led development of networking and operational features for a cloud-managed 3D-printer fleet, including video streaming, status monitoring, remote command and control, and firmware upgrades.",
+    "text": "Led development of networking and operational features for a cloud-managed 3D-printer fleet, including video streaming, fleet-status monitoring, remote commands, and firmware upgrades.",
     "tags": ["leadership"],
     "skills": ["Monitoring", "Technical leadership", "IoT"]
   },
   {
     "jobId": "costrategix",
-    "text": "Led a vendor-data reconciliation project for a client with more than $1 billion in annual sales; the system identified discrepancies and improved auditor efficiency.",
+    "text": "Delivered a vendor-data reconciliation system for a client with more than $1 billion in annual sales, identifying discrepancies and improving auditor efficiency.",
     "tags": ["software-engineering", "leadership", "data"],
     "skills": ["Technical leadership", "Platform integration"]
   },
   {
     "jobId": "costrategix",
-    "text": "Automated site monitoring, analytics collection, development-environment setup, and server maintenance with PHP, Python, and Bash scripts.",
+    "text": "Automated site-health checks, analytics collection, development-environment setup, and server maintenance with PHP, Python, and Bash scripts.",
     "tags": ["software-engineering", "devops", "automation"],
     "skills": ["PHP", "Python", "Bash", "Monitoring", "Build tooling"]
   },
   {
     "jobId": "costrategix",
-    "text": "Implemented logging and security-scanning controls to support PCI compliance, using Graylog, OSSEC, Zabbix, and Fail2Ban to improve threat detection and response.",
+    "text": "Established logging and security-scanning controls for PCI compliance, using Graylog, OSSEC, Zabbix, and Fail2Ban to strengthen threat detection and response.",
     "tags": ["security", "devops"],
     "skills": ["PCI compliance", "Graylog", "OSSEC", "Zabbix", "Fail2Ban", "Security scanning"]
   },
   {
     "jobId": "costrategix",
-    "text": "Supported a restaurant-management platform serving more than 1,000 locations by monitoring service health with Zabbix, performing security scans, and maintaining AWS auto-scaling rules and server configurations.",
+    "text": "Maintained service health for a restaurant-management platform serving more than 1,000 locations by monitoring with Zabbix, performing security scans, and managing AWS auto-scaling rules and server configurations.",
     "tags": ["devops", "security", "monitoring"],
     "skills": ["Zabbix", "Security scanning", "AWS", "AWS auto scaling", "Monitoring"]
   },
   {
     "jobId": "costrategix",
-    "text": "Prototyped IoT applications and evaluated AWS Lambda, Angular, React, and Firebase to demonstrate emerging cloud capabilities to the team.",
+    "text": "Evaluated AWS Lambda, Angular, React, and Firebase through IoT prototypes to demonstrate emerging cloud capabilities to the team.",
     "tags": ["software-engineering", "research", "cloud"],
     "skills": ["AWS Lambda", "Angular", "React", "Firebase", "IoT"]
   },
@@ -86,7 +86,7 @@
   },
   {
     "jobId": "convergeys-java-developer-internship",
-    "text": "Contributed to the company's flagship rating and billing system by gathering requirements, preparing a technical proposal, implementing features, and writing unit tests.",
+    "text": "Gathered requirements, prepared a technical proposal, implemented features, and wrote unit tests for the company's flagship rating and billing system.",
     "tags": ["software-engineering", "requirements", "testing"],
     "skills": ["Java"]
   },
@@ -98,13 +98,13 @@
   },
   {
     "jobId": "army",
-    "text": "Served as a firefighter and lead firefighter, leading emergency-response readiness.",
+    "text": "Served as a firefighter and lead firefighter, coordinating emergency-response readiness.",
     "tags": ["military"],
     "skills": []
   },
   {
     "jobId": "army",
-    "text": "Maintained accountability and inventory of sensitive unit equipment.",
+    "text": "Oversaw accountability and inventory of sensitive unit equipment.",
     "tags": ["military"],
     "skills": []
   }
