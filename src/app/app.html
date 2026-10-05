@@ -130,10 +130,45 @@
             <p class="education-item">
               <strong>{{ e.degree }}</strong
               >, {{ e.school }} ({{ e.year }})
+              @if (e.gpa) {
+                <span class="gpa"> · GPA: {{ e.gpa }}</span>
+              }
             </p>
           }
         </mat-card-content>
       </mat-card>
+    </section>
+
+    <section aria-labelledby="recognition-heading" class="recognition-section">
+      <div class="section-heading">
+        <h2 id="recognition-heading">Certifications &amp; Awards</h2>
+      </div>
+      <div class="recognition-grid">
+        <mat-card appearance="outlined">
+          <mat-card-header>
+            <mat-card-title>Certifications</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <ul class="recognition-list">
+              @for (certification of r.certifications; track certification) {
+                <li>{{ certification }}</li>
+              }
+            </ul>
+          </mat-card-content>
+        </mat-card>
+        <mat-card appearance="outlined">
+          <mat-card-header>
+            <mat-card-title>Awards</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <ul class="recognition-list">
+              @for (award of r.awards; track award) {
+                <li>{{ award }}</li>
+              }
+            </ul>
+          </mat-card-content>
+        </mat-card>
+      </div>
     </section>
   </main>
 

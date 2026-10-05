@@ -14,7 +14,9 @@ export interface Resume {
   skills: { category: string; items: string[] }[];
   experience: Job[];
   additionalExperience: Job[];
-  education: { school: string; degree: string; year: string }[];
+  education: { school: string; degree: string; year: string; gpa?: string }[];
+  certifications: string[];
+  awards: string[];
 }
 
 export interface Bullet {

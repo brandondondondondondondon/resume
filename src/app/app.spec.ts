@@ -18,7 +18,9 @@ const RESUME = {
     { id: 'j2', company: 'Globex', role: 'Dev', start: '2018-01', end: '2020-12' },
   ],
   additionalExperience: [],
-  education: [{ school: 'Uni', degree: 'BS', year: '2018' }],
+  education: [{ school: 'Uni', degree: 'BS', year: '2018', gpa: '3.68' }],
+  certifications: ['AWS Certified Developer – Associate'],
+  awards: ['IPSO finalist, 2013 — Project Ripple'],
 };
 
 const BULLETS = [
@@ -69,8 +71,11 @@ describe('App', () => {
     expect(el.textContent).toContain('2021-01 – Present');
     expect(el.textContent).toContain('2018-01 – 2020-12');
     expect(el.textContent).toContain('BS');
+    expect(el.textContent).toContain('GPA: 3.68');
     expect(el.textContent).toContain('GitHub');
     expect(el.textContent).toContain('Spring Boot');
+    expect(el.textContent).toContain('AWS Certified Developer – Associate');
+    expect(el.textContent).toContain('IPSO finalist, 2013 — Project Ripple');
     expect(el.textContent).toContain('Experience');
     expect(el.querySelector('#additional-experience-heading')).toBeNull();
   });

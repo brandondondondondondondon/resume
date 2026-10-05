@@ -14,32 +14,62 @@
   {
     "id": 3,
     "jobId": "sogeti",
-    "text": "Developed a Java Spring Boot application to support analysis of flight sensor data.",
-    "tags": ["software-engineering"]
+    "text": "Built features across aircraft flight-data applications using Java, Python, Go, and Vue.js.",
+    "tags": ["software-engineering", "data"]
   },
   {
     "id": 4,
     "jobId": "sogeti",
-    "text": "Supported tools and applications for building, scanning, and monitoring software, as well as systems critical to live flight-data analytics.",
-    "tags": ["devops"]
+    "text": "Served as a senior developer on SOAR, a highly available Spring Boot and Docker application on AWS that analyzes engine performance and issues real-time alerts.",
+    "tags": ["software-engineering", "cloud", "data"]
+  },
+  {
+    "id": 17,
+    "jobId": "sogeti",
+    "text": "Developed an auditable data-export service to integrate platform versions, processing up to 700 reports per minute and 500,000 analytic executions per minute.",
+    "tags": ["software-engineering", "cloud", "data"]
+  },
+  {
+    "id": 18,
+    "jobId": "sogeti",
+    "text": "Troubleshot complex data issues across engine registration, analytic workflows, AWS services, and corporate networks to support accuracy and reliability in a safety-critical application.",
+    "tags": ["troubleshooting", "cloud", "data"]
+  },
+  {
+    "id": 19,
+    "jobId": "sogeti",
+    "text": "Monitored and mitigated vulnerabilities in applications and Docker containers identified by Qualys, Prisma Cloud, and SonarQube.",
+    "tags": ["security", "devops"]
+  },
+  {
+    "id": 20,
+    "jobId": "sogeti",
+    "text": "Responded to P1 service outages, helping troubleshoot and mitigate production issues and follow up with root-cause analysis and preventive actions.",
+    "tags": ["devops", "troubleshooting"]
   },
   {
     "id": 5,
     "jobId": "costrategix",
-    "text": "Supported tools and applications for building, scanning, and monitoring software.",
+    "text": "Owned product delivery from gathering client needs and estimating work through coordinating the development team and conducting client reviews.",
     "tags": ["devops"]
   },
   {
     "id": 6,
     "jobId": "costrategix",
-    "text": "Provided technical leadership, answered team questions, and resolved blockers to keep development moving.",
+    "text": "Led development of key networking and operational components for a cloud-based 3D-printing platform, including video streaming, status monitoring, command control, and firmware upgrades.",
     "tags": ["leadership"]
   },
   {
     "id": 7,
     "jobId": "costrategix",
-    "text": "Developed Java Spring applications.",
-    "tags": ["software-engineering"]
+    "text": "Researched and prototyped IoT applications and cloud technologies, including AWS Lambda, Angular, React, and Firebase, to demonstrate new capabilities to the team.",
+    "tags": ["software-engineering", "research", "cloud"]
+  },
+  {
+    "id": 21,
+    "jobId": "costrategix",
+    "text": "Developed Java and Spring applications and provided technical leadership to the development team.",
+    "tags": ["software-engineering", "leadership"]
   },
   {
     "id": 8,

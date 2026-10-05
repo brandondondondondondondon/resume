@@ -9,23 +9,58 @@
       { "label": "LinkedIn", "url": "https://www.linkedin.com/in/brandon-is-a-coder/" }
     ]
   },
-  "summary": "Short professional summary goes here.",
+  "summary": "Software engineer and technical leader with experience building cloud applications and data services for aircraft and engine analytics. Hands-on background with Java, Python, Go, Spring Boot, AWS, and production troubleshooting, with additional experience in application security, client delivery, and technology research.",
   "skills": [
     {
-      "category": "Languages & Frameworks",
-      "items": ["Java", "Spring", "Spring Boot"]
+      "category": "Languages",
+      "items": ["Java", "Python", "Go", "JavaScript", "Bash", "HTML", "CSS"]
     },
     {
-      "category": "Software Delivery",
-      "items": ["DevOps", "Build tooling", "Security scanning", "Monitoring"]
+      "category": "Frameworks & Platforms",
+      "items": [
+        "Spring",
+        "Spring Boot",
+        "Vue.js",
+        "Node.js",
+        "AWS",
+        "AWS Lambda",
+        "Docker",
+        "Linux",
+        "Angular",
+        "React",
+        "Firebase"
+      ]
     },
     {
-      "category": "Leadership",
-      "items": ["Technical leadership", "Consulting"]
+      "category": "Data Stores",
+      "items": ["Oracle", "PostgreSQL", "MySQL", "MongoDB"]
     },
     {
-      "category": "Domain Experience",
-      "items": ["Flight sensor data", "Flight-data analytics"]
+      "category": "Cloud & Operations",
+      "items": [
+        "Highly available services",
+        "Platform integration",
+        "Build tooling",
+        "Security scanning",
+        "Monitoring",
+        "Incident response",
+        "Root-cause analysis"
+      ]
+    },
+    {
+      "category": "Security & Quality Tools",
+      "items": ["Qualys", "Prisma Cloud", "SonarQube"]
+    },
+    {
+      "category": "Leadership & Domains",
+      "items": [
+        "Technical leadership",
+        "Product ownership",
+        "Consulting",
+        "Aircraft flight-data analytics",
+        "Engine performance analytics",
+        "IoT"
+      ]
     }
   ],
   "experience": [
@@ -96,6 +131,17 @@
     }
   ],
   "education": [
-    { "school": "Miami University", "degree": "B.S. in Software Engineering", "year": "2014" }
-  ]
+    {
+      "school": "Miami University",
+      "degree": "B.S. in Software Engineering",
+      "year": "2014",
+      "gpa": "3.68"
+    }
+  ],
+  "certifications": [
+    "AWS Certified SysOps Administrator – Associate",
+    "AWS Certified Solutions Architect – Associate",
+    "AWS Certified Developer – Associate"
+  ],
+  "awards": ["IPSO finalist, 2013 — Project Ripple"]
 }
