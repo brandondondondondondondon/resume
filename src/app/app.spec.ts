@@ -24,10 +24,9 @@ const RESUME = {
 };
 
 const BULLETS = [
-  { id: 1, jobId: 'j1', text: 'Front thing', tags: ['frontend'], skills: ['Java'] },
-  { id: 2, jobId: 'j1', text: 'Back thing', tags: ['backend'], skills: ['Spring Boot'] },
+  { jobId: 'j1', text: 'Front thing', tags: ['frontend'], skills: ['Java'] },
+  { jobId: 'j1', text: 'Back thing', tags: ['backend'], skills: ['Spring Boot'] },
   {
-    id: 3,
     jobId: 'j2',
     text: 'Both thing',
     tags: ['frontend', 'backend'],
@@ -39,12 +38,12 @@ describe('App', () => {
   let fixture: ComponentFixture<App>;
   let el: HTMLElement;
 
-  async function setup(search = '', resume: object = RESUME) {
+  async function setup(search = '', resume: object = RESUME, bullets = BULLETS) {
     window.history.replaceState(null, '', '/' + search);
     fixture = TestBed.createComponent(App);
     const http = TestBed.inject(HttpTestingController);
     http.expectOne('data/resume.json').flush(resume);
-    http.expectOne('data/bullets.json').flush(BULLETS);
+    http.expectOne('data/bullets.json').flush(bullets);
     await fixture.whenStable();
     fixture.detectChanges();
     el = fixture.nativeElement as HTMLElement;
@@ -97,6 +96,34 @@ describe('App', () => {
       'Additional Experience',
     );
     expect(el.textContent).toContain('Globex');
+  });
+
+  it('renders configured jobs with no bullets and omits their empty bullet lists', async () => {
+    const emptyRole = {
+      id: 'empty-role',
+      company: 'Prior Co',
+      role: 'Earlier role',
+      start: '2010',
+      end: '2011',
+    };
+    await setup(
+      '',
+      {
+        ...RESUME,
+        additionalExperience: [emptyRole],
+      },
+      BULLETS.filter((bullet) => bullet.jobId === 'j1'),
+    );
+
+    const jobs = [...el.querySelectorAll('.job')];
+    const globex = byText('.job', 'Globex');
+    const priorRole = byText('.job', 'Earlier role');
+    expect(globex).toBeDefined();
+    expect(priorRole).toBeDefined();
+    expect(globex?.querySelector('ul')).toBeNull();
+    expect(priorRole?.querySelector('ul')).toBeNull();
+    expect(jobs).toHaveLength(3);
+    expect(el.querySelector('#additional-experience-heading')).not.toBeNull();
   });
 
   it('filters bullets by tag and clears the filter when toggled off', async () => {

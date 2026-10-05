@@ -47,12 +47,20 @@ export class App {
 
   private readonly visibleEntries = (entries: Resume['experience']) => {
     const active = this.activeTags();
-    const bullets = this.bullets().filter(
+    const allBullets = this.bullets();
+    const filteredBullets = allBullets.filter(
       (b) => active.length === 0 || b.tags.some((t) => active.includes(t)),
     );
     return entries
-      .map((job) => ({ job, bullets: bullets.filter((b) => b.jobId === job.id) }))
-      .filter((entry) => entry.bullets.length > 0);
+      .map((job) => {
+        const jobBullets = allBullets.filter((b) => b.jobId === job.id);
+        return {
+          job,
+          bullets: filteredBullets.filter((b) => b.jobId === job.id),
+          hasNoBullets: jobBullets.length === 0,
+        };
+      })
+      .filter((entry) => entry.hasNoBullets || entry.bullets.length > 0);
   };
 
   protected readonly experience = computed(() =>

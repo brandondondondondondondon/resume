@@ -20,7 +20,6 @@ export interface Resume {
 }
 
 export interface Bullet {
-  id: number;
   jobId: string;
   text: string;
   tags: string[];

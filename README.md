@@ -20,10 +20,10 @@ All content is in `public/data/`:
 | File           | Contents                                                                                                                             |
 | -------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
 | `resume.json`  | profile, contact, grouped `skills`, `experience`, `additionalExperience`, `education` (optional GPA), `certifications`, and `awards` |
-| `bullets.json` | list of bullets: `{ id, jobId, text, tags, skills? }`                                                                                |
+| `bullets.json` | list of bullets: `{ jobId, text, tags, skills? }`                                                                                    |
 
-- `jobId` must match an `id` in either `experience` or `additionalExperience`. Entries with no matching bullets are hidden.
-- Bullet `id` values must be unique.
+- `jobId` must match an `id` in either `experience` or `additionalExperience`. Entries with no bullets configured remain visible; when tag filters are selected, entries with bullets but no matching bullets are hidden.
+- Bullets do not need IDs; the page tracks each bullet by its position in the job's displayed list.
 - Dates use `YYYY` or `YYYY-MM`. An `end` of `null` is shown as "Present". Overlapping titles at one employer should be a single entry with combined role text.
 - Tags are free-form; any tag used on a bullet appears as a filter chip.
 - Skills are grouped by `category`, with each group's `items` rendered as skill chips.

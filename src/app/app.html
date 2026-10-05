@@ -94,11 +94,13 @@
             </mat-card-subtitle>
           </mat-card-header>
           <mat-card-content>
-            <ul>
-              @for (b of entry.bullets; track b.id) {
-                <li [class.skill-highlighted]="hasSelectedSkill(b)">{{ b.text }}</li>
-              }
-            </ul>
+            @if (entry.bullets.length) {
+              <ul>
+                @for (b of entry.bullets; track $index) {
+                  <li [class.skill-highlighted]="hasSelectedSkill(b)">{{ b.text }}</li>
+                }
+              </ul>
+            }
           </mat-card-content>
         </mat-card>
       }
@@ -119,11 +121,13 @@
               </mat-card-subtitle>
             </mat-card-header>
             <mat-card-content>
-              <ul>
-                @for (b of entry.bullets; track b.id) {
-                  <li [class.skill-highlighted]="hasSelectedSkill(b)">{{ b.text }}</li>
-                }
-              </ul>
+              @if (entry.bullets.length) {
+                <ul>
+                  @for (b of entry.bullets; track $index) {
+                    <li [class.skill-highlighted]="hasSelectedSkill(b)">{{ b.text }}</li>
+                  }
+                </ul>
+              }
             </mat-card-content>
           </mat-card>
         }
