@@ -24,4 +24,5 @@ export interface Bullet {
   jobId: string;
   text: string;
   tags: string[];
+  skills?: string[];
 }

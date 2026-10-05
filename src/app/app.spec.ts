@@ -24,9 +24,15 @@ const RESUME = {
 };
 
 const BULLETS = [
-  { id: 1, jobId: 'j1', text: 'Front thing', tags: ['frontend'] },
-  { id: 2, jobId: 'j1', text: 'Back thing', tags: ['backend'] },
-  { id: 3, jobId: 'j2', text: 'Both thing', tags: ['frontend', 'backend'] },
+  { id: 1, jobId: 'j1', text: 'Front thing', tags: ['frontend'], skills: ['Java'] },
+  { id: 2, jobId: 'j1', text: 'Back thing', tags: ['backend'], skills: ['Spring Boot'] },
+  {
+    id: 3,
+    jobId: 'j2',
+    text: 'Both thing',
+    tags: ['frontend', 'backend'],
+    skills: ['Java', 'Spring Boot'],
+  },
 ];
 
 describe('App', () => {
@@ -107,6 +113,23 @@ describe('App', () => {
     await click(byText('mat-chip-option', 'frontend'));
     await click(byText('mat-chip-option', 'backend'));
     expect(bulletTexts()).toEqual(['Front thing', 'Back thing', 'Both thing']);
+  });
+
+  it('highlights bullets with selected skills without filtering other bullets', async () => {
+    await setup();
+    await click(byText('.skill-chip', 'Java'));
+    expect(bulletTexts()).toEqual(['Front thing', 'Back thing', 'Both thing']);
+    expect(el.querySelectorAll('.job li.skill-highlighted')).toHaveLength(2);
+    expect(byText('.skill-chip', 'Java')?.getAttribute('aria-pressed')).toBe('true');
+  });
+
+  it('clears highlights when a skill is selected again', async () => {
+    await setup();
+    const java = () => byText('.skill-chip', 'Java');
+    await click(java());
+    await click(java());
+    expect(el.querySelectorAll('.job li.skill-highlighted')).toHaveLength(0);
+    expect(java()?.getAttribute('aria-pressed')).toBe('false');
   });
 
   it('lists the selected tags in the print footer only when tags are selected', async () => {

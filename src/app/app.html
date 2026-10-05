@@ -44,7 +44,7 @@
     <section aria-labelledby="skills-heading" class="skills-section">
       <div class="section-heading">
         <h2 id="skills-heading">Skills</h2>
-        <p>Core strengths from my engineering and leadership experience</p>
+        <p>Select a skill to highlight related bullets. Select it again to clear.</p>
       </div>
       <div class="skill-grid">
         @for (group of r.skills; track group.category) {
@@ -52,7 +52,17 @@
             <h3>{{ group.category }}</h3>
             <ul class="skill-list">
               @for (skill of group.items; track skill) {
-                <li>{{ skill }}</li>
+                <li>
+                  <button
+                    type="button"
+                    class="skill-chip"
+                    [class.selected]="activeSkills().includes(skill)"
+                    [attr.aria-pressed]="activeSkills().includes(skill)"
+                    (click)="toggleSkill(skill)"
+                  >
+                    {{ skill }}
+                  </button>
+                </li>
               }
             </ul>
           </div>
@@ -86,7 +96,7 @@
           <mat-card-content>
             <ul>
               @for (b of entry.bullets; track b.id) {
-                <li>{{ b.text }}</li>
+                <li [class.skill-highlighted]="hasSelectedSkill(b)">{{ b.text }}</li>
               }
             </ul>
           </mat-card-content>
@@ -111,7 +121,7 @@
             <mat-card-content>
               <ul>
                 @for (b of entry.bullets; track b.id) {
-                  <li>{{ b.text }}</li>
+                  <li [class.skill-highlighted]="hasSelectedSkill(b)">{{ b.text }}</li>
                 }
               </ul>
             </mat-card-content>

@@ -7,6 +7,7 @@ Live site: https://brandondondondondondondon.github.io/resume/
 ## Features
 
 - **JSON-managed content:** profile, skills, experience, education, certifications, and awards in `resume.json`; experience bullets in `bullets.json`.
+- **Skill highlighting:** select skill chips to highlight associated bullets without filtering or hiding other experience.
 - **Tag filtering:** filter bullets by tag chips. With several tags selected, bullets carrying any of them are shown (and printed).
 - **Tag-based links:** share `?tags=backend,leadership` to open a tailored view. The URL stays in sync as filters change.
 - **PDF output:** CI generates `resume.pdf`. The PDF button links to it when no tags are selected, or opens the print dialog (Save as PDF) for filtered views.
@@ -19,13 +20,14 @@ All content is in `public/data/`:
 | File           | Contents                                                                                                                             |
 | -------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
 | `resume.json`  | profile, contact, grouped `skills`, `experience`, `additionalExperience`, `education` (optional GPA), `certifications`, and `awards` |
-| `bullets.json` | list of bullets: `{ id, jobId, text, tags }`                                                                                         |
+| `bullets.json` | list of bullets: `{ id, jobId, text, tags, skills? }`                                                                                |
 
 - `jobId` must match an `id` in either `experience` or `additionalExperience`. Entries with no matching bullets are hidden.
 - Bullet `id` values must be unique.
 - Dates use `YYYY` or `YYYY-MM`. An `end` of `null` is shown as "Present". Overlapping titles at one employer should be a single entry with combined role text.
 - Tags are free-form; any tag used on a bullet appears as a filter chip.
 - Skills are grouped by `category`, with each group's `items` rendered as skill chips.
+- A bullet's optional `skills` list must use skill names from `resume.json`; selecting one or more skill chips highlights bullets matching any selected skill without filtering them.
 - Education entries may include a `gpa`; certifications and awards are displayed in their own section.
 
 Types for this data are in `src/app/resume.model.ts`.

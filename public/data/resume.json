@@ -13,7 +13,7 @@
   "skills": [
     {
       "category": "Languages",
-      "items": ["Java", "Python", "Go", "JavaScript", "Bash", "HTML", "CSS"]
+      "items": ["Java", "Python", "Go", "JavaScript", "Bash", "PHP", "HTML", "CSS"]
     },
     {
       "category": "Frameworks & Platforms",
@@ -44,12 +44,22 @@
         "Security scanning",
         "Monitoring",
         "Incident response",
-        "Root-cause analysis"
+        "Root-cause analysis",
+        "AWS auto scaling"
       ]
     },
     {
       "category": "Security & Quality Tools",
-      "items": ["Qualys", "Prisma Cloud", "SonarQube"]
+      "items": [
+        "Qualys",
+        "Prisma Cloud",
+        "SonarQube",
+        "Graylog",
+        "OSSEC",
+        "Zabbix",
+        "Fail2Ban",
+        "PCI compliance"
+      ]
     },
     {
       "category": "Leadership & Domains",
@@ -143,5 +153,8 @@
     "AWS Certified Solutions Architect – Associate",
     "AWS Certified Developer – Associate"
   ],
-  "awards": ["IPSO finalist, 2013 — Project Ripple"]
+  "awards": [
+    "IPSO finalist, 2013 — Project Ripple",
+    "Third place, IPSO Conference 2014 — mass-casualty patient-management IoT project"
+  ]
 }

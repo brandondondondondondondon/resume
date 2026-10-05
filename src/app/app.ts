@@ -29,6 +29,7 @@ export class App {
   protected readonly activeTags = signal<string[]>(
     this.params.get('tags')?.split(',').filter(Boolean) ?? [],
   );
+  protected readonly activeSkills = signal<string[]>([]);
 
   protected readonly dark = signal(
     localStorage.getItem(THEME_KEY)
@@ -82,6 +83,16 @@ export class App {
     this.activeTags.update((cur) =>
       cur.includes(tag) ? cur.filter((t) => t !== tag) : [...cur, tag],
     );
+  }
+
+  protected toggleSkill(skill: string) {
+    this.activeSkills.update((cur) =>
+      cur.includes(skill) ? cur.filter((item) => item !== skill) : [...cur, skill],
+    );
+  }
+
+  protected hasSelectedSkill(bullet: Bullet) {
+    return (bullet.skills ?? []).some((skill) => this.activeSkills().includes(skill));
   }
 
   protected toggleTheme() {

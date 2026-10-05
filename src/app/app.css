@@ -108,12 +108,23 @@
   list-style: none;
 }
 
-.skill-list li {
+.skill-chip {
   padding: 0.3rem 0.65rem;
   border-radius: 999px;
   background: var(--mat-sys-secondary-container);
   color: var(--mat-sys-on-secondary-container);
+  font: inherit;
   font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.skill-chip.selected {
+  background: var(--mat-sys-primary);
+  color: var(--mat-sys-on-primary);
+}
+
+.skill-chip:focus-visible {
+  outline: 2px solid var(--mat-sys-primary);
 }
 
 .experience-section,
@@ -194,6 +205,13 @@
   margin-bottom: 0;
 }
 
+.job li.skill-highlighted {
+  padding: 0.45rem 0.65rem;
+  border-inline-start: 3px solid var(--mat-sys-primary);
+  background: var(--mat-sys-primary-container);
+  color: var(--mat-sys-on-primary-container);
+}
+
 .additional-job {
   background: var(--mat-sys-surface-container-low);
 }
@@ -215,10 +233,7 @@
     gap: 1.5rem;
   }
 
-  .skill-grid {
-    grid-template-columns: 1fr;
-  }
-
+  .skill-grid,
   .recognition-grid {
     grid-template-columns: 1fr;
   }
@@ -280,7 +295,8 @@
     break-after: avoid;
   }
 
-  .skill-list li {
+  .skill-chip,
+  .job li.skill-highlighted {
     background: #eee !important;
     color: #111 !important;
   }
