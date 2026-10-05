@@ -11,7 +11,9 @@ export interface Resume {
   title: string;
   contact: { email: string; location: string; links: { label: string; url: string }[] };
   summary: string;
-  jobs: Job[];
+  skills: { category: string; items: string[] }[];
+  experience: Job[];
+  additionalExperience: Job[];
   education: { school: string; degree: string; year: string }[];
 }
 

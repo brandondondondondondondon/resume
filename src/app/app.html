@@ -1,6 +1,5 @@
 @if (resume(); as r) {
   <mat-toolbar color="primary" class="toolbar">
-    <span>{{ r.name }}</span>
     <span class="spacer"></span>
     <button
       matIconButton
@@ -20,14 +19,14 @@
     }
   </mat-toolbar>
 
-  <main>
-    <mat-card appearance="outlined">
+  <main class="resume-page">
+    <mat-card appearance="outlined" class="profile-card">
       <mat-card-header>
         <mat-card-title class="name">{{ r.name }}</mat-card-title>
         <mat-card-subtitle>{{ r.title }}</mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
-        <p class="contact">
+        <div class="contact">
           <a matButton [href]="'mailto:' + r.contact.email"
             ><mat-icon>mail</mat-icon>{{ r.contact.email }}</a
           >
@@ -37,49 +36,105 @@
               <mat-icon>open_in_new</mat-icon>{{ link.label }}
             </a>
           }
-        </p>
-        <p>{{ r.summary }}</p>
+        </div>
+        <p class="summary">{{ r.summary }}</p>
       </mat-card-content>
     </mat-card>
 
-    <h2>Experience</h2>
-    <mat-chip-listbox class="filters" multiple aria-label="Filter by tag">
-      @for (tag of tags(); track tag) {
-        <mat-chip-option [selected]="activeTags().includes(tag)" (click)="toggleTag(tag)">
-          {{ tag }}
-        </mat-chip-option>
-      }
-    </mat-chip-listbox>
+    <section aria-labelledby="skills-heading" class="skills-section">
+      <div class="section-heading">
+        <h2 id="skills-heading">Skills</h2>
+        <p>Core strengths from my engineering and leadership experience</p>
+      </div>
+      <div class="skill-grid">
+        @for (group of r.skills; track group.category) {
+          <div class="skill-group">
+            <h3>{{ group.category }}</h3>
+            <ul class="skill-list">
+              @for (skill of group.items; track skill) {
+                <li>{{ skill }}</li>
+              }
+            </ul>
+          </div>
+        }
+      </div>
+    </section>
 
-    @for (entry of jobs(); track entry.job.id) {
-      <mat-card appearance="outlined" class="job">
-        <mat-card-header>
-          <mat-card-title>{{ entry.job.role }}</mat-card-title>
-          <mat-card-subtitle>
-            {{ entry.job.company }} · {{ entry.job.start }} – {{ entry.job.end ?? 'Unspecified' }}
-          </mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-content>
-          <ul>
-            @for (b of entry.bullets; track b.id) {
-              <li>{{ b.text }}</li>
-            }
-          </ul>
-        </mat-card-content>
-      </mat-card>
+    <section aria-labelledby="experience-heading" class="experience-section">
+      <div class="section-heading experience-heading">
+        <div>
+          <h2 id="experience-heading">Experience</h2>
+          <p>Software engineering roles</p>
+        </div>
+        <mat-chip-listbox class="filters" multiple aria-label="Filter experience by tag">
+          @for (tag of tags(); track tag) {
+            <mat-chip-option [selected]="activeTags().includes(tag)" (click)="toggleTag(tag)">
+              {{ tag }}
+            </mat-chip-option>
+          }
+        </mat-chip-listbox>
+      </div>
+
+      @for (entry of experience(); track entry.job.id) {
+        <mat-card appearance="outlined" class="job">
+          <mat-card-header>
+            <mat-card-title>{{ entry.job.role }}</mat-card-title>
+            <mat-card-subtitle>
+              {{ entry.job.company }} · {{ entry.job.start }} – {{ entry.job.end ?? 'Present' }}
+            </mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <ul>
+              @for (b of entry.bullets; track b.id) {
+                <li>{{ b.text }}</li>
+              }
+            </ul>
+          </mat-card-content>
+        </mat-card>
+      }
+    </section>
+
+    @if (additionalExperience().length) {
+      <section aria-labelledby="additional-experience-heading" class="additional-section">
+        <div class="section-heading">
+          <h2 id="additional-experience-heading">Additional Experience</h2>
+          <p>Earlier roles and other experience</p>
+        </div>
+        @for (entry of additionalExperience(); track entry.job.id) {
+          <mat-card appearance="outlined" class="job additional-job">
+            <mat-card-header>
+              <mat-card-title>{{ entry.job.role }}</mat-card-title>
+              <mat-card-subtitle>
+                {{ entry.job.company }} · {{ entry.job.start }} – {{ entry.job.end ?? 'Present' }}
+              </mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+              <ul>
+                @for (b of entry.bullets; track b.id) {
+                  <li>{{ b.text }}</li>
+                }
+              </ul>
+            </mat-card-content>
+          </mat-card>
+        }
+      </section>
     }
 
-    <h2>Education</h2>
-    <mat-card appearance="outlined">
-      <mat-card-content>
-        @for (e of r.education; track e.school) {
-          <p>
-            <strong>{{ e.degree }}</strong
-            >, {{ e.school }} ({{ e.year }})
-          </p>
-        }
-      </mat-card-content>
-    </mat-card>
+    <section aria-labelledby="education-heading" class="education-section">
+      <div class="section-heading">
+        <h2 id="education-heading">Education</h2>
+      </div>
+      <mat-card appearance="outlined">
+        <mat-card-content>
+          @for (e of r.education; track e.school) {
+            <p class="education-item">
+              <strong>{{ e.degree }}</strong
+              >, {{ e.school }} ({{ e.year }})
+            </p>
+          }
+        </mat-card-content>
+      </mat-card>
+    </section>
   </main>
 
   @if (activeTags().length) {

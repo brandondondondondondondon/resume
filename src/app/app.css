@@ -1,64 +1,255 @@
 .spacer {
   flex: 1;
 }
+
 .toolbar {
   position: sticky;
   top: 0;
   z-index: 10;
   gap: 0.5rem;
+  box-shadow: 0 2px 12px rgb(0 0 0 / 10%);
 }
-main {
-  max-width: 800px;
+
+.resume-page {
+  max-width: 900px;
   margin: 0 auto;
-  padding: 1.5rem 1rem 3rem;
+  padding: 2rem 1.25rem 4rem;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 2rem;
 }
-h2 {
-  margin: 1rem 0 0;
-  font-weight: 500;
+
+.profile-card {
+  border-inline-start: 4px solid var(--mat-sys-primary);
+  background: var(--mat-sys-surface-container-lowest);
 }
-mat-card-header {
-  padding-bottom: 0.5rem;
-}
+
 .name {
-  font-size: 2rem;
-  line-height: 2.5rem;
+  font-size: clamp(2rem, 6vw, 3rem);
+  line-height: 1.15;
+  letter-spacing: -0.04em;
 }
+
+.profile-card mat-card-subtitle {
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+}
+
 .contact {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 0.25rem;
+  margin-top: 1rem;
 }
+
 .location {
   display: inline-flex;
   align-items: center;
   gap: 0.25rem;
   padding: 0 0.75rem;
 }
-li {
-  margin-bottom: 0.5rem;
+
+.summary {
+  max-width: 70ch;
+  margin: 1rem 0 0;
+  line-height: 1.65;
 }
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid var(--mat-sys-outline-variant);
+}
+
+.section-heading h2 {
+  margin: 0 0 0.4rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.section-heading p {
+  margin: 0 0 0.55rem;
+  color: var(--mat-sys-on-surface-variant);
+  font-size: 0.9rem;
+}
+
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.skill-group {
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--mat-sys-outline-variant);
+  border-radius: 0.75rem;
+  background: var(--mat-sys-surface-container-lowest);
+}
+
+.skill-group h3 {
+  margin: 0 0 0.75rem;
+  color: var(--mat-sys-primary);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.skill-list li {
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+  background: var(--mat-sys-secondary-container);
+  color: var(--mat-sys-on-secondary-container);
+  font-size: 0.85rem;
+}
+
+.experience-section,
+.additional-section,
+.education-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.experience-heading {
+  align-items: center;
+}
+
+.filters {
+  margin-bottom: 0.35rem;
+}
+
 .job {
+  border-radius: 0.85rem;
   animation: fade-in 250ms ease-out;
 }
+
+.job mat-card-header {
+  padding-bottom: 0.5rem;
+}
+
+.job mat-card-title {
+  font-size: 1.15rem;
+  line-height: 1.4;
+}
+
+.job mat-card-subtitle {
+  margin-top: 0.25rem;
+}
+
+.job ul {
+  margin: 0;
+  padding-inline-start: 1.25rem;
+  line-height: 1.6;
+}
+
+.job li {
+  margin-bottom: 0.45rem;
+  padding-inline-start: 0.2rem;
+}
+
+.job li:last-child {
+  margin-bottom: 0;
+}
+
+.additional-job {
+  background: var(--mat-sys-surface-container-low);
+}
+
+.education-item {
+  margin: 0;
+}
+
 @keyframes fade-in {
   from {
     opacity: 0;
     transform: translateY(6px);
   }
 }
+
+@media (max-width: 600px) {
+  .resume-page {
+    padding: 1.25rem 0.85rem 2.5rem;
+    gap: 1.5rem;
+  }
+
+  .skill-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-heading {
+    align-items: start;
+  }
+
+  .toolbar .pdf {
+    min-width: auto;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .job {
     animation: none;
   }
 }
+
 .print-tags {
   display: none;
 }
+
 @media print {
+  .toolbar,
+  .filters {
+    display: none !important;
+  }
+
+  .resume-page {
+    max-width: none;
+    padding: 0;
+    gap: 1rem;
+  }
+
+  .profile-card,
+  .skill-group,
+  .job,
+  .additional-job {
+    background: #fff !important;
+    color: #111 !important;
+    box-shadow: none !important;
+    break-inside: avoid;
+  }
+
+  .profile-card,
+  .skill-group,
+  .job {
+    border-color: #bbb !important;
+  }
+
+  .job {
+    animation: none;
+  }
+
+  .section-heading {
+    break-after: avoid;
+  }
+
+  .skill-list li {
+    background: #eee !important;
+    color: #111 !important;
+  }
+
   .print-tags {
     display: block;
     position: fixed;
@@ -69,16 +260,5 @@ li {
     text-align: center;
     font-size: 0.75rem;
     color: #555;
-  }
-  .toolbar,
-  .filters {
-    display: none;
-  }
-  main {
-    padding: 0 0 2rem;
-  }
-  .job {
-    break-inside: avoid;
-    animation: none;
   }
 }

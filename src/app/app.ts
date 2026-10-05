@@ -44,15 +44,23 @@ export class App {
     this.activeTags().length === 0 ? 'resume.pdf' : null,
   );
 
-  protected readonly jobs = computed(() => {
+  private readonly visibleEntries = (entries: Resume['experience']) => {
     const active = this.activeTags();
     const bullets = this.bullets().filter(
       (b) => active.length === 0 || b.tags.some((t) => active.includes(t)),
     );
-    return (this.resume()?.jobs ?? [])
+    return entries
       .map((job) => ({ job, bullets: bullets.filter((b) => b.jobId === job.id) }))
       .filter((entry) => entry.bullets.length > 0);
-  });
+  };
+
+  protected readonly experience = computed(() =>
+    this.visibleEntries(this.resume()?.experience ?? []),
+  );
+
+  protected readonly additionalExperience = computed(() =>
+    this.visibleEntries(this.resume()?.additionalExperience ?? []),
+  );
 
   constructor() {
     effect(() => {

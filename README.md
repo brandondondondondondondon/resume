@@ -16,15 +16,16 @@ Live site: https://brandondondondondondondon.github.io/resume/
 
 All content is in `public/data/`:
 
-| File           | Contents                                           |
-| -------------- | -------------------------------------------------- |
-| `resume.json`  | name, title, contact, summary, `jobs`, `education` |
-| `bullets.json` | list of bullets: `{ id, jobId, text, tags }`       |
+| File           | Contents                                                                                           |
+| -------------- | -------------------------------------------------------------------------------------------------- |
+| `resume.json`  | name, title, contact, summary, grouped `skills`, `experience`, `additionalExperience`, `education` |
+| `bullets.json` | list of bullets: `{ id, jobId, text, tags }`                                                       |
 
-- `jobId` must match a job `id` in `resume.json`. Jobs with no matching bullets are hidden.
+- `jobId` must match an `id` in either `experience` or `additionalExperience`. Entries with no matching bullets are hidden.
 - Bullet `id` values must be unique.
-- A job's `end` of `null` is shown as "Unspecified", so use a real end date for past roles. Overlapping titles at one employer should be a single job with combined role text.
+- Dates use `YYYY` or `YYYY-MM`. An `end` of `null` is shown as "Present". Overlapping titles at one employer should be a single entry with combined role text.
 - Tags are free-form; any tag used on a bullet appears as a filter chip.
+- Skills are grouped by `category`, with each group's `items` rendered as skill chips.
 
 Types for this data are in `src/app/resume.model.ts`.
 

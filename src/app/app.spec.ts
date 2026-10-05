@@ -12,10 +12,12 @@ const RESUME = {
     links: [{ label: 'GitHub', url: 'https://example.com/gh' }],
   },
   summary: 'sum',
-  jobs: [
+  skills: [{ category: 'Languages & Frameworks', items: ['Java', 'Spring Boot'] }],
+  experience: [
     { id: 'j1', company: 'Acme', role: 'Lead', start: '2021-01', end: null },
     { id: 'j2', company: 'Globex', role: 'Dev', start: '2018-01', end: '2020-12' },
   ],
+  additionalExperience: [],
   education: [{ school: 'Uni', degree: 'BS', year: '2018' }],
 };
 
@@ -40,7 +42,7 @@ describe('App', () => {
     el = fixture.nativeElement as HTMLElement;
   }
 
-  const bulletTexts = () => [...el.querySelectorAll('li')].map((li) => li.textContent?.trim());
+  const bulletTexts = () => [...el.querySelectorAll('.job li')].map((li) => li.textContent?.trim());
   const click = async (node: Element | null | undefined) => {
     (node as HTMLElement).click();
     await fixture.whenStable();
@@ -62,11 +64,28 @@ describe('App', () => {
   it('renders header, jobs, bullets and education from JSON', async () => {
     await setup();
     expect(el.querySelector('.name')?.textContent).toContain('Test Person');
+    expect(el.querySelector('mat-toolbar')?.textContent).not.toContain('Test Person');
     expect(bulletTexts()).toEqual(['Front thing', 'Back thing', 'Both thing']);
-    expect(el.textContent).toContain('2021-01 – Unspecified');
+    expect(el.textContent).toContain('2021-01 – Present');
     expect(el.textContent).toContain('2018-01 – 2020-12');
     expect(el.textContent).toContain('BS');
     expect(el.textContent).toContain('GitHub');
+    expect(el.textContent).toContain('Spring Boot');
+    expect(el.textContent).toContain('Experience');
+    expect(el.querySelector('#additional-experience-heading')).toBeNull();
+  });
+
+  it('renders additional experience separately from software engineering roles', async () => {
+    await setup('', {
+      ...RESUME,
+      experience: [RESUME.experience[0]],
+      additionalExperience: [RESUME.experience[1]],
+    });
+    expect(el.querySelector('#experience-heading')?.textContent).toContain('Experience');
+    expect(el.querySelector('#additional-experience-heading')?.textContent).toContain(
+      'Additional Experience',
+    );
+    expect(el.textContent).toContain('Globex');
   });
 
   it('filters bullets by tag and clears the filter when toggled off', async () => {
@@ -95,8 +114,9 @@ describe('App', () => {
 
   it('shows filter chips for tags used by bullets', async () => {
     await setup();
-    expect([...el.querySelectorAll('mat-chip-option')].map((chip) => chip.textContent?.trim()))
-      .toEqual(['backend', 'frontend']);
+    expect(
+      [...el.querySelectorAll('mat-chip-option')].map((chip) => chip.textContent?.trim()),
+    ).toEqual(['backend', 'frontend']);
   });
 
   it('applies ?tags= from the URL and keeps the URL in sync', async () => {
